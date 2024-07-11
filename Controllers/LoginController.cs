@@ -1,6 +1,5 @@
 ﻿using auth_jwt.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -49,17 +48,5 @@ namespace auth_jwt.Controllers
         }
             return response;
     }
-        private User AuthenticateUser(User loginCredentials)
-        {
-            // Example logic to authenticate user
-            // Replace this with your actual authentication logic
-            if (loginCredentials.Username == "admin" && loginCredentials.Password == "123456")
-            {
-                return new User { Username = loginCredentials.Username, Password = loginCredentials.Password };
-            }
-            return null;
-        }
-
-
     }
 }
